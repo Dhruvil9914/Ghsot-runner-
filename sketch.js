@@ -39,18 +39,15 @@ function draw() {
     
     if(keyDown("right_arrow")){
       ghost.x = ghost.x +4;
-      // write a code to move left when left arrow is pressed
     }
     if(keyDown("left_arrow")){
        ghost.x = ghost.x -4;
     
-      // write a code to move left when right arrow is pressed
       
     }
     if(keyDown("space")){
        ghost.velocityY = -10;
    
-      // write a code to move up when space arrow is pressed
       
     }
   
@@ -60,7 +57,6 @@ function draw() {
      tower.y = 300
 
    }
-      //write a condition for infinte scrolling tower
     
       spawnDoors();
       
@@ -72,8 +68,6 @@ function draw() {
          gameState = "end";
       }
   
-      //write a code to make climbersGroup collide with ghost change the ghost velocity  
-//write a code to make invisibleBlockGroup collide with ghost destroy the ghost and make gamestate to end.
   
   drawSprites();
 }
@@ -87,7 +81,6 @@ function draw() {
 
 function spawnDoors()
  {
-  //write code here to spawn the clouds
   if (frameCount % 240 === 0) {
     var door = createSprite(200, -50);
     var climber = createSprite(200,10);
@@ -97,8 +90,8 @@ function spawnDoors()
     door.x = Math.round(random(120,400));
     climber.x = door.x;
     invisibleBlock.x = door.x;
-    //add the random function
-    //
+    
+    
     door.addImage(doorImg);
     climber.addImage(climberImg);
     
@@ -106,7 +99,7 @@ function spawnDoors()
     climber.velocityY = 1;
     invisibleBlock.velocityY = 1;
 
-    //change the depth of the ghost and door
+    
     ghost.depth = door.depth;
     ghost.depth = ghost.depth +1;
      
@@ -114,12 +107,10 @@ function spawnDoors()
     door.lifetime = 600;
     climber.lifetime = 600;
     invisibleBlock.lifetime = 600;
-    //assign lifetime to the obstacle.lifetime = 300; here  obstacle are door, climber and invisible block
      doorsGroup.add(door);
      invisibleBlockGroup.add(invisibleBlock);
      climbersGroup.add(climber);
   
-    //add each obstacle to the group obstaclesGroup.add(obstacle);here  obstacle are door, climber and invisible block
   }
 }
 
